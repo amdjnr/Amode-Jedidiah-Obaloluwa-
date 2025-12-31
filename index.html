@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amode Jedidiah Obaloluwa – Graphic Designer & Programmer</title>
+  <style>
+    /* ==== GLOBAL RESET ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #007acc;
+    }
+
+    /* ==== HEADER / HERO ==== */
+    #hero {
+      background: linear-gradient(135deg, #007acc, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 5rem 0 4rem 0;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #hero .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    /* ==== ABOUT ==== */
+    #about p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .skills {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .skills li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ==== WORK EXPERIENCE ==== */
+    .experience {
+      background: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .experience h3 {
+      color: #007acc;
+    }
+
+    .experience .date {
+      display: block;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ==== PROJECTS ==== */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project img {
+      width: 100%;
+      height: 150px;          /* box height */
+      object-fit: cover;     /* fills the box */
+      object-position: center; /* centers the image */
+      display: block;
+    }
+
+
+    .project h4 {
+      margin: 1rem;
+      color: #007acc;
+    }
+
+    .project p {
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* ==== CONTACT ==== */
+    #contact p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-details {
+      list-style: none;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-details li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-details a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: #007acc;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #005f99;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    /* ==== ANIMATIONS ==== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .slide-in-left {
+      opacity: 0;
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .project:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 600px) {
+      #hero h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==== HERO SECTION ==== -->
+  <header id="hero">
+    <div class="container">
+      <h1>Hi, I’m <span class="name">Amode Jediaiah Obaloluwa</span></h1>
+      <p class="subtitle">Graphic Designer • Programmer</p>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==== ABOUT ==== -->
+  <section id="about" class="fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a 300level Software Engineer Student of Bowen University. I’m a passionate creative who blends design and development. With several years of experience in both
+        graphic design and programming, I create visual experiences that not only look great but function beautifully.
+      </p>
+      <ul class="skills">
+        <li>🎨 Graphic Tools: Adobe Illustrator, Photoshop, Figma</li>
+        <li>💻 Programming: HTML, CSS, JavaScript, React, Node.js</li>
+        <li>🚀 Specialties: UI/UX, Branding, Responsive Design</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==== WORK EXPERIENCE ==== -->
+  <section id="work">
+    <div class="container">
+      <h2>Work Experience</h2>
+      <div class="experience">
+        <h3>Graphic Designer at GOPIUS E-LEARNING HUB</h3>
+        <span class="date">July 2025 – September 2025</span>
+        <p>
+          Designed company Advertisement e-flyers, conference e-flyers and developed interactive prototypes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== PROJECTS ==== -->
+  <section id="projects">
+    <div class="container">
+      <h2>Selected Projects</h2>
+      <div class="project-grid">
+        <div class="project slide-in-left">
+        <img src="conference-design.png" alt="Conference e-flyer">
+          <h4>Conference e-flyer</h4>
+          <p>Designed a dynamic e-flyer for an annual tech conference, incorporating modern typography, vibrant visuals, and interactive elements. The flyer was optimized for digital sharing across social media and email.</p>
+        </div>
+        <div class="project slide-in-left">
+<img src="job-advertisement.png" alt="Company Advertisement E-flyer">
+          <h4>Company Advertisement E-flyer</h4>
+          <p>Created an eye-catching e-flyer for GOPIUS E-learning , featuring available positions in the organization, and the contact button.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== CONTACT ==== -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Interested in collaborating or hiring me? Let’s connect.</p>
+      <ul class="contact-details">
+        <li>Email: <a href="mailto:youremail@example.com">obaloluwa4isreal@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/amdjnr" target="_blank">github.com/amdjnr</a></li>
+      </ul>
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
+  <footer>
+    <div class="container">
+      <p> Amode Jedidiah Obaloluwa <br> BU23SEN1049</p>
+    </div>
+  </footer>
+
+  <!-- ==== SMOOTH SCROLL JS ==== -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
